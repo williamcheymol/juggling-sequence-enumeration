@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+desktop.ini
+
+# Obsidian
+.obsidian/
+
+# LaTeX artifacts
+*.aux
+*.log
+*.toc
+*.synctex.gz
+*.nav
+*.snm
+*.out
