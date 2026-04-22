@@ -15,9 +15,6 @@ Juggling has been studied mathematically since the 1980s. The question driving t
 
 The standard encoding is **siteswap notation** — each integer in the sequence represents how many time steps a ball stays in the air. The **average theorem** guarantees validity: a sequence is jugglable if and only if its average equals the number of balls.
 
-![Siteswap sequence 4053](images/sequence.png)
-*Siteswap sequence 4053 — visualised with juggling cards*
-
 ---
 
 ## Approach — graph theory
@@ -26,9 +23,7 @@ The key insight: represent the juggler's state at any moment as a binary vector 
 
 Each valid throw transitions the juggler from one state to the next, defining a **directed juggling graph** where nodes are states and edges are valid throws. A juggling sequence of period t corresponds exactly to a **closed path of length t** in this graph.
 
-| b=3, H=5 juggling graph | Second graph example |
-|:---:|:---:|
-| ![Map 1](images/map1.png) | ![Map 2](images/map2.png) |
+![Juggling graph b=3, H=5](images/map1.png)
 
 The self-loop on state `11100` with throw 3 corresponds to the sequence `"3"` — the standard 3-ball cascade.
 
@@ -38,7 +33,7 @@ The self-loop on state `11100` with throw 3 corresponds to the sequence `"3"` �
 
 Counting closed paths via the adjacency matrix $M$:
 
-$$\gamma(t) = \operatorname{tr}(M^t) - \sum_{\substack{d \mid t \\ d < t}} \gamma(d)$$
+$$\gamma(t) = \mathrm{tr}(M^t) - \sum_{\substack{d \mid t \\ d < t}} \gamma(d)$$
 
 $$\text{Patterns}(t) = \frac{\gamma(t)}{t}$$
 
@@ -91,9 +86,7 @@ juggling-sequence-enumeration/
 │   ├── slides.pdf      # Oral presentation slides
 │   └── mcot.pdf        # Official MCOT submission
 └── images/
-    ├── sequence.png     # Siteswap sequence (juggling cards)
     ├── map1.png         # Juggling graph — b=3, H=5
-    ├── map2.png         # Juggling graph — second example
     ├── new_patterns.png # Results — new patterns per period
     ├── C0–C3.png        # Individual juggling cards
     ├── lancers_pairs.png    # Even throws illustration
@@ -106,6 +99,10 @@ juggling-sequence-enumeration/
 
 Siteswap notation was independently developed by several jugglers and mathematicians in the 1980s. The mathematical framework used here — state graphs and closed-path counting — follows the approach of Buhler, Eisenbud, Graham & Wright (1994).
 
-![Even throws](images/lancers_pairs.png) ![Odd throws](images/lancers_impairs.png)
+<p align="center">
+  <img src="images/lancers_pairs.png" width="45%"/>
+  &nbsp;&nbsp;
+  <img src="images/lancers_impairs.png" width="45%"/>
+</p>
 
 *Even throws (direct) and odd throws (crossing hands)*
