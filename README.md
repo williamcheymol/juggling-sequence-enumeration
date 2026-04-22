@@ -47,8 +47,6 @@ Running `all_patterns_count()` across all ball counts up to **b = 10**, maximum 
 
 **1,342,382 distinct juggling sequences.**
 
-![New patterns per period](images/new_patterns.png)
-
 ---
 
 ## Usage
